@@ -27,22 +27,65 @@ Status Push(SeqStack *S, SElemType e)
         if(!(*S).base) exit(OVERFLOW);
         (*S).stacksize += STACKINCREMENT;
     }
-    *(*S).top++ = e;
+    *((*S).top++) = e;
     return OK;
 }
 
 
-Status Pop(SeqStack *S, SElemType *e)
+SElemType Pop(SeqStack *S)
 {
     //判断栈是否为空
     if((*S).top == (*S).base) return ERROR;
-    *e = *--(*S).top;
-    return OK;
+    return *(--(*S).top);
 }
 
 Status StackEmpty(SeqStack S)
 {
     if(S.top == S.base) return TRUE;
+    else return FALSE;
+}
+
+
+Status InitLinkStack(LinkStack *S)
+{
+    int value;
+    LinkStack head, p;
+    //建立头节点
+    *S = (LinkStack)malloc(sizeof(SNode));
+    if(!(*S)) exit(OVERFLOW);
+    (*S)->next = NULL;
+    p = head = *S; //S其实指向得就是头结点!!!
+    return OK;
+}
+
+Status LinkStackPush(LinkStack *S, SElemType e)
+{
+    //插入元素e为新的栈顶元素
+    LinkStack p = (LinkStack)malloc(sizeof(SNode));
+    if(!p) exit(OVERFLOW);
+    p->data = e;
+    p->next = (*S)->next;
+    (*S)->next = p;
+
+    return OK;
+}
+
+SElemType LinkStackPop(LinkStack *S)
+{
+    LinkStack p;
+
+    //判断栈是否为空
+    if((*S)->next == NULL) return ERROR;
+    p = (*S)->next;
+    SElemType se = p->data;
+    (*S)->next = p->next;
+    free(p);
+    return se;
+}
+
+Status LinkStackEmpty(LinkStack *S)
+{
+    if((*S)->next == NULL) return TRUE;
     else return FALSE;
 }
 

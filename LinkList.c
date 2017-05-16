@@ -2,6 +2,10 @@
 //[2014/12/12]
 //xiaopo
 
+#ifndef LINKLIST_C_
+#define LINKLIST_C_
+
+
 #include "common.h"
 
 //linklist* CreateLinklist(){
@@ -15,21 +19,27 @@
 Status InitLinkList(LinkList *L)
 {
     int value;
-    LinkList head = *L;
-    LinkList p = head;
+    LinkList head, p;
     //建立头节点
     *L = (LinkList)malloc(sizeof(LNode));
     if(!(*L)) exit(OVERFLOW);
     (*L)->next = NULL;
-    //头插法建立
+    p = head = *L;
     printf("请输入结点的值:_\b(以空格分开),以#号结束");
     while(1 == scanf("%d", &value)){
         LinkList q;
         q = (LinkList)malloc(sizeof(LNode));
         if(!q) exit(OVERFLOW);
         q->data = value;
-        q->next = (*L)->next;//此处和下面必须得用*L，被赋值变量应为后面用不到的变量。
+        //头插法建立
+        /*
+        q->next = (*L)->next;//此处和下面必须得用*L，被赋值变量应为后面用不到的变量。即：先修改对后续操作无影响的！！！
         (*L)->next = q;
+        */
+        //尾插法建立
+        q->next = p->next;
+        p->next = q;
+        p = q;
     }
     return OK;
 }
@@ -96,3 +106,5 @@ int SortLinklist(linklist* L){
     }
     return 1;
 }*/
+
+#endif // LINKLIST_C_

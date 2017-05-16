@@ -34,7 +34,7 @@ Status PreOrderTraverse(BiTree T, Status(* Visit)(TElemType e))
             p = p->lchild;
         }
         if(!StackEmpty(S)){
-            Pop(&S, &p);
+            p = Pop(&S);
             p = p->rchild;
         }
     }

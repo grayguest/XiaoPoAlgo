@@ -18,12 +18,15 @@
 
 typedef int Status;
 
+//常用工具集
+int gcd(int m, int n); //求两个整数的最大公约数
+
 
 //LinkList
 typedef int ElemType;
 typedef struct LNode{
     ElemType data;
-    struct Lnode* next;
+    struct LNode* next;
 }LNode, *LinkList;//稍微修改一下，把LinkList改为指针型
 
 //linklist* CreateLinklist(void);//改为下面的
@@ -51,14 +54,15 @@ typedef struct BiTNode{
 //按照先序顺序输入二X树中结点的值（一个字符），递归建立二X树，空格字符表示空树，
 //构造二X链表表示的二X树T。
 Status CreateBiTree(BiTree *T);
-Status PreOrderTraverse(BiTree T, Status(* Visit)(TElemType e));
-Status InOrderTraverse(BiTree T, Status(* Visit)(TElemType e));
+Status PreOrderTraverse(BiTree T, Status(* Visit)(TElemType e)); //前序遍历
+Status InOrderTraverse(BiTree T, Status(* Visit)(TElemType e));  //后序遍历
 //访问函数
 Status PrintTElemData(TElemType e);
 
 
+
 //Stack
-typedef BiTree SElemType;
+typedef int SElemType;
 typedef struct SeqStack{
     SElemType *base;
     SElemType *top;
@@ -66,8 +70,22 @@ typedef struct SeqStack{
 } SeqStack;
 Status InitStack(SeqStack *S);
 Status Push(SeqStack *S, SElemType e);
-Status Pop(SeqStack *S, SElemType *e);
+Status Pop(SeqStack *S);
 Status StackEmpty(SeqStack S);
+
+//LinkStack
+typedef int SElemType;
+typedef struct LStackNode{
+    SElemType data;
+    struct LStackNode* next;
+}SNode, *LinkStack;
+
+Status InitLinkStack(LinkStack *S);
+
+
+//Queue
+
+
 
 
 #endif // COMMON_H_
