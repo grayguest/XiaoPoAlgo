@@ -27,11 +27,13 @@ typedef struct LNode{
 }LNode, *LinkList;//稍微修改一下，把LinkList改为指针型
 
 //linklist* CreateLinklist(void);//改为下面的
-Status InitList(LinkList *L);
+//Status init_linklist(LinkList *L); //不要改成这种，因为它不像是STL那样是一种纯粹的算法，应用于容器。
+Status InitLinkList(LinkList *L); //改为这种，首字母也不要小写，因为它可以独挡一面，并非属于某类或某结构体。
 //int InsertIntoLinlist(linklist *L, int x);//tail
 //int PrintLinklist(linklist* L);//改为下面的
-Status ListTraverse(LinkList L, Status (*Visit)(ElemType e));
+Status TraverseLinkList(LinkList L, Status (*Visit)(ElemType e));
 Status PrintLinkListElemData(ElemType e);
+
 
 //Stack
 #define STACK_INIT_SIZE 100

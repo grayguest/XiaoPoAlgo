@@ -12,7 +12,7 @@
 //    return L;
 //}
 
-Status InitList(LinkList *L)
+Status InitLinkList(LinkList *L)
 {
     int value;
     LinkList head = *L;
@@ -57,7 +57,7 @@ Status InitList(LinkList *L)
 //    return 1;
 //}
 
-Status ListTraverse(LinkList L, Status (*Visit)(ElemType e))
+Status TraverseLinkList(LinkList L, Status (*Visit)(ElemType e))
 {
     LinkList p = L;
     p = p->next;//从头结点移动到开始结点
