@@ -7,8 +7,8 @@ int main()
 {
 
     LinkList L;
-    InitList(&L);
-    ListTraverse(L, PrintLinkListElemData);
+    InitLinkList(&L);
+    TraverseLinkList(L, PrintLinkListElemData);
 
 //    BiTree T;
 //    CreateBiTree(&T);

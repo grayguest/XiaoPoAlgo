@@ -28,7 +28,7 @@ Status InitLinkList(LinkList *L)
         q = (LinkList)malloc(sizeof(LNode));
         if(!q) exit(OVERFLOW);
         q->data = value;
-        q->next = (*L)->next;//此处和下面必须得用*L
+        q->next = (*L)->next;//此处和下面必须得用*L，被赋值变量应为后面用不到的变量。
         (*L)->next = q;
     }
     return OK;

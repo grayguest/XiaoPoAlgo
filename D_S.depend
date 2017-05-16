@@ -22,3 +22,20 @@
 1418399929 source:e:\software\c\d\c\d_s\linklist.c
 	"common.h"
 
+1418396237 source:e:\software\c\d\c\datastructure\bitree.c
+	"common.h"
+
+1494919841 e:\software\c\d\c\datastructure\common.h
+	<stdlib.h>
+
+1494920527 source:e:\software\c\d\c\datastructure\main.c
+	<stdio.h>
+	<stdlib.h>
+	"common.h"
+
+1418312591 source:e:\software\c\d\c\datastructure\stack.c
+	"common.h"
+
+1494919772 source:e:\software\c\d\c\datastructure\linklist.c
+	"common.h"
+
