@@ -38,7 +38,7 @@ Status TraverseLinkList(LinkList L, Status (*Visit)(ElemType e));
 Status PrintLinkListElemData(ElemType e);
 
 
-//Stack
+
 #define STACK_INIT_SIZE 100
 #define STACKINCREMENT 10
 
@@ -84,6 +84,18 @@ Status InitLinkStack(LinkStack *S);
 
 
 //Queue
+#define MAX_QUEUE_SIZE 100
+typedef int QElemType;
+typedef struct Queue{
+    int data[MAX_QUEUE_SIZE];
+    int front;
+    int rear;
+}Queue;
+
+Status InitQueue(Queue *Q);
+Status EnQueue(Queue *Q, QElemType q);
+QElemType DeQueue(Queue *Q);
+QElemType GetQueue(Queue *Q);
 
 
 

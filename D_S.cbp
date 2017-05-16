@@ -37,7 +37,13 @@
 		<Unit filename="LinkList.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="common.h" />
