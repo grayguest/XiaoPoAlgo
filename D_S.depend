@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1418399966 source:e:\software\c\d\c\d_s\main.c
+	<stdio.h>
+	<stdlib.h>
+	"common.h"
+
+1418226420 source:e:\software\c\d\c\d_s\common.c
+	<stdlib.h>
+
+1418396237 source:e:\software\c\d\c\d_s\bitree.c
+	"common.h"
+
+1418226420 e:\software\c\d\c\d_s\common.c
+	<stdlib.h>
+
+1418312591 source:e:\software\c\d\c\d_s\stack.c
+	"common.h"
+
+1418399117 e:\software\c\d\c\d_s\common.h
+	<stdlib.h>
+
+1418399929 source:e:\software\c\d\c\d_s\linklist.c
+	"common.h"
+
